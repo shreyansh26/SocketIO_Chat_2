@@ -1,3 +1,5 @@
+'use strict';
+
 var socket = io();
   function setUsername(){
       socket.emit('setUsername', document.getElementById('name').value);
@@ -6,16 +8,20 @@ var socket = io();
 
   var user;
   var users = '';
+  var Users = [];
+
   socket.on('userExists', function(data){
       document.getElementById('error-container').innerHTML = data;
   });
 
   socket.on('userSet', function(data){
       user = data.username;
+      Users.push(user);
       document.body.innerHTML = '<input type="text" id="message">\
       <button type="button" name="button" onclick="sendMessage()">Send</button>\
       <ul id="Users"></ul>\
       <div id="message-container"></div>';
+      showUsers(Users);
   });
 
   function sendMessage(){
@@ -26,12 +32,12 @@ var socket = io();
       }
   }
 
-  function showUsers(){
-    cosole.log("shreyansh26");
-    for(var i=0; i<user.length; i++){
-      users+='<li>user[i]</li>';
+  function showUsers(Users){
+    //console.log("shreyansh26");
+    for(var i=0; i<Users.length; i++){
+      users+='Your username: '+Users[i];
     }
-    console.log(users);
+    //console.log(users);
     document.getElementById('Users').innerHTML = users;
   }
 
@@ -40,5 +46,3 @@ var socket = io();
           document.getElementById('message-container').innerHTML += '<div><b>' + data.user + '</b>: ' + data.message + '</div>'
       }
   })
-
-//module.exports = {showUsers};

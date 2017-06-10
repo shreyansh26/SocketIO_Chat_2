@@ -31,6 +31,7 @@ io.on('connection', function(socket){
       users.push(data);
       socket.emit('userSet', {username: data});
     }
+    console.log(users);
   });
   socket.on('msg', function(data){
       //Send message to everyone
