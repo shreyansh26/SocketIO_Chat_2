@@ -12,6 +12,10 @@ app.get('/main.js', function(req, res){
   res.sendFile(__dirname + '/main.js');
 });
 
+app.get('/style.css', function(req, res){
+  res.sendFile(__dirname + '/style.css');
+});
+
 // Port
 port = process.env.PORT || 3000;
 
