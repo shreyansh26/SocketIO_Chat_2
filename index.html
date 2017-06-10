@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head><title>SocketIO Chat</title></head>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <body>
+        <div id="error-container"></div>
+        <input id="name" type="text" name="name" value="" placeholder="Enter your name!">
+        <button type="button" name="button" onclick="setUsername()">Let me chat!</button>
+        <ul id="Users"></ul>
+    </body>
+    <script>
+      showUsers();
+    </script>
+</html>

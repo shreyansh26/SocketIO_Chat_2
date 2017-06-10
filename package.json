@@ -1,0 +1,23 @@
+{
+  "name": "socketio_chat",
+  "version": "1.0.0",
+  "description": "A simple Socket.io based chat server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shreyansh26/SocketIO_Chat_2.git"
+  },
+  "author": "shreyansh26",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shreyansh26/SocketIO_Chat_2/issues"
+  },
+  "homepage": "https://github.com/shreyansh26/SocketIO_Chat_2#readme",
+  "dependencies": {
+    "express": "4.15.3",
+    "socket.io": "1.7.3"
+  }
+}
